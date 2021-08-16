@@ -1,0 +1,5 @@
+tsc app.ts -w  ==> watch mode where if there is a change in .ts file, tsc will compile code automatically
+
+initiliza project:
+
+tsc --init
