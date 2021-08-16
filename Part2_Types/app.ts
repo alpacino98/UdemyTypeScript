@@ -86,3 +86,38 @@ if (person3.role == Role.ADMIN) {
 let anyArray : any[];
 anyArray = ["Deneme", 1, 2, true]
 
+// Union Types and Union Types function handling
+
+function combine(input1 : number | string, input2: string | number, resultType: 'number' | 'string'){
+  let result :any;
+  if(typeof input1 === 'number' && typeof input2 === 'number'){
+    result =  input1 + input2;
+  }else{
+    result = input1.toString() + input2.toString();
+  }
+
+  if(resultType === "number"){
+    return +result;
+  }
+  else if(resultType == "string"){
+    return result.toString();  
+  }
+  return result;
+}
+
+let res = combine(1,2,"number");
+console.log(res);
+
+res = combine(2, "alp", "string");
+console.log(res);
+
+res = combine("12", "35", "number");
+console.log(res);
+
+res = combine("alp ", "kumbasar", "string")
+console.log(res);
+
+// Type Alieases => Custom Types
+
+type Combinable = number | string; // This now can be used rather than union type
+
